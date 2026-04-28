@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AyurCheck AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="appShell">
+    <header class="hero">
+      <div>
+        <p class="subtitle">Ayurvedic Research Plagiarism Detection</p>
+        <h1>AyurCheck AI</h1>
+      </div>
+    </header>
+
+    <section class="card inputCard">
+      <div class="sectionTitle">
+        <h2>Check Article Similarity</h2>
+        <p>Paste research text, add a source URL, or use both.</p>
+      </div>
+
+      <div class="field">
+        <label for="articleText">Article text</label>
+        <textarea id="articleText" rows="11" placeholder="Paste Ayurvedic research article text here..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="articleUrl">Article URL</label>
+        <input id="articleUrl" type="url" placeholder="https://example.com/article" />
+      </div>
+
+      <button id="checkButton" type="button">
+        <span id="buttonText">Check Plagiarism</span>
+        <span id="spinner" class="spinner hidden" aria-hidden="true"></span>
+      </button>
+
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <section id="result" class="card resultCard hidden">
+      <div class="resultTop">
+        <div>
+          <span class="metricLabel">Similarity Score</span>
+          <strong id="score" class="scoreValue">0%</strong>
+        </div>
+        <div class="levelBox">
+          <span class="metricLabel">Risk Level</span>
+          <strong id="level" class="levelBadge low">LOW</strong>
+        </div>
+      </div>
+
+      <div class="progressTrack" aria-label="Similarity score progress">
+        <div id="progressBar" class="progressBar"></div>
+      </div>
+
+      <div class="warning">
+        ⚠ This is a semantic similarity estimate, not a legal plagiarism judgment.
+      </div>
+
+      <div class="explanationBlock">
+        <h2>Explanation</h2>
+        <p id="explanation"></p>
+      </div>
+
+      <div class="matchesHeader">
+        <h2>Matches</h2>
+        <span id="matchCount">0 found</span>
+      </div>
+      <div id="matches" class="matchesGrid"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
